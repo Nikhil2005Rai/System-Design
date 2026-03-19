@@ -1,2 +1,4 @@
-Text1
-Image: image.png
+Hello, this is a sample document.
+[Image: image1.png]
+This is another line.
+
