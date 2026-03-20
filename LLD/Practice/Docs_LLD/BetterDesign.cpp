@@ -25,6 +25,7 @@ public:
     string render() override {
         return "[Image: " + path + "]";
     }
+    
 };
 
 class Document {
