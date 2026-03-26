@@ -131,18 +131,6 @@ public:
     }
 
     /*
-    ⚠️ IMPROVEMENT NOTE (important for interviews):
-    - Add destructor to avoid memory leaks
-    - Or use smart pointers (unique_ptr)
-
-    ~Robot() {
-        delete walkBehaviour;
-        delete talkBehaviour;
-        delete flyBehaviour;
-    }
-    */
-
-    /*
     ⚠️ EXTENSION:
     Add setters to change behavior dynamically
 
