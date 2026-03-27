@@ -28,7 +28,7 @@ public:
         return name;
     }
 
-    void setName(const string &n) {
+    void setName(const std::string &n) {
         name = n;
     }
 

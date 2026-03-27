@@ -19,7 +19,7 @@ private:
     std::vector<MenuItem> items;
     PaymentStrategy* paymentStrategy;
     double total;
-    string scheduled;
+    std::string scheduled;
 
 public:
     Order() {
@@ -37,7 +37,7 @@ public:
 
     bool processPayment() {
         if (paymentStrategy) {
-            paymentStrategy->pay();
+            paymentStrategy->pay(total);
             return true;
         } else {
             std::cout << "Please choose a payment mode first" << std::endl;
@@ -45,7 +45,7 @@ public:
         }
     }
 
-    virtual string getType() const = 0;
+    virtual std::string getType() const = 0;
 
     //Getters and Setters
     int getOrderId() const {
@@ -88,11 +88,15 @@ public:
         scheduled = s;
     }
 
+    std::string getScheduled() const {
+        return scheduled;
+    }
+
     double getTotal() const {
         return total;
     }
 
-    void setTotal(int total) {
+    void setTotal(double total) {
         this->total = total;
     }
 };

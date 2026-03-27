@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <cctype>
 #include "../models/Restaurant.h"
 
 class RestaurantManager {
@@ -27,13 +28,14 @@ public:
         restuarants.push_back(r);
     }
 
-    std::vector<Restaurant*> searchByLocation(string loc) {
-        vector<Restaurant*> result;
-        std::transform(loc.begin(), loc.end(), loc.begin(), ::tolower);
-        for(auto r: restuarants) {
-            string rl = r->getLocation();
+    std::vector<Restaurant*> searchByLocation(std::string loc) {
+        std::vector<Restaurant*> result;
+        std::transform(loc.begin(), loc.end(), loc.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
+        for (auto r : restuarants) {
+            std::string rl = r->getLocation();
+            std::transform(rl.begin(), rl.end(), rl.begin(), [](unsigned char ch) { return static_cast<char>(std::tolower(ch)); });
             if(rl == loc) {
-                result.push_back(rl);
+                result.push_back(r);
             }
         }
         return result;

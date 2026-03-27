@@ -19,7 +19,7 @@ public:
 
     void addItem(const MenuItem& item) {
         if(!restaurant) {
-            std::cerr << "Cart: Set a restaurant before adding items." <<endl;
+            std::cerr << "Cart: Set a restaurant before adding items." << std::endl;
             return;
         } 
         items.push_back(item);

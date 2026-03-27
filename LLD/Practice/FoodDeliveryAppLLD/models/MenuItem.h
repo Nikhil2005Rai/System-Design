@@ -1,7 +1,7 @@
 #ifndef MENUITEM_H
 #define MENUITEM_H
 
-#include<string>
+#include <string>
 
 class MenuItem {
 private:
@@ -14,7 +14,7 @@ public:
         : code(code), name(name), price(price) {}
 
     //Getters and Setters
-    std::string& getCode() const {
+    const std::string& getCode() const {
         return code;
     }
 
@@ -22,7 +22,7 @@ public:
         code = c;
     }
 
-    std::string& getName() const {
+    const std::string& getName() const {
         return name;
     }
 
